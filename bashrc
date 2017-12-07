@@ -29,7 +29,8 @@ export CC="clang"
 export CXX="clang++"
 
 # thefuck
-eval $(thefuck --alias)
+command -v thefuck >/dev/null 2>&1 && \
+	eval $(thefuck --alias)
 
 # Some useful alias
 alias ag='ag --follow'
