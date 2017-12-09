@@ -7,8 +7,9 @@
 set wildmenu "zsh like Tab key view
 
 " Alt key mapping issue
-execute "set <M-h>=\eh"
-execute "set <M-l>=\el"
+" Also brings another issue: have to wait for a while after <C-[>
+"execute "set <M-h>=\eh"
+"execute "set <M-l>=\el"
 
 " ==> Appearance
 
@@ -41,14 +42,12 @@ set scrolloff=7
 
 " Tab operations
 " Ctrl-h/l to switch tab
-" Alt-h/l to move tab around
 " n: normal mode; noremap: maps, but not recursively
-nnoremap <M-h> gT
-nnoremap <M-l> gt
+nnoremap <C-h> gT
+nnoremap <C-l> gt
 " <CR>: carriage return, means an enter hit
-nnoremap <silent> <C-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
-
+"nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+"nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " ==> Search
 
