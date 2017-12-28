@@ -15,8 +15,8 @@ export PATH="$PATH:$GOPATH/bin"
 # In yaourt, we can edit stuff with vim
 export VISUAL=vim
 
-export PATH="$PATH:$HOME/bin"
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+
 
 # PS1='[\u@\h \W]\$ '
 PS1='${arch_chroot:+($arch_chroot)}\[\033[01;33m\]\u\[\033[37m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -63,3 +63,6 @@ alias socks='ALL_PROXY=socks5://127.0.0.1:1080/ \
 #
 #export GTK_MODULES
 #export UBUNTU_MENUPROXY
+
+# stack's suggestion
+export PATH="$HOME/.local/bin:$PATH"

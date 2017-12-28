@@ -1,18 +1,20 @@
 Linux
 ----------------
-Simply `git clone` and `ln`.
+```shell
+./install.py
+```
 
 
 Windows
 ----------------
-`git clone` is always the same, then from **`cmd`**:
+From **`cmd`**:
 ```
 mklink LINK TARGET
 ```
 
 Carefully mind the order of these two parameter!
 
-&#35;WindowsSucks
+&#35;WindowsSucks&#35;
 
 
 License
