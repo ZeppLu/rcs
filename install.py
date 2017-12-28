@@ -14,11 +14,11 @@ items = {
 
 
 def get_backup_path(orig_path):
-    possible_result = orig_path + ".backup"
-    if os.path.isfile(possible_result):
-        return get_backup_path(possible_result)
+    possible = orig_path + ".backup"
+    if os.path.isfile(possible):
+        return get_backup_path(possible)
     else:
-        return possible_result
+        return possible
 
 
 def install_file(file_path, target_path):
