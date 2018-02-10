@@ -6,12 +6,11 @@
 # in the cabal config. We recommend uncommenting them and filling them out if
 # you intend to use 'stack new'.
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
-#templates:
-#  params:
-#    author-name:
-#    author-email:
-#    copyright:
-#    github-username:
+templates:
+  params:
+    author-name: Zepp Lu
+    author-email: luzepu678 AT gmail DOT com
+    github-username: ZeppLu
 
 
 package-indices:
