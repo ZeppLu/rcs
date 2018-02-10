@@ -32,7 +32,7 @@ def install_file(file_path, target_path):
         log.W("Ignoring already-created symbolic link {target}"
                 .format(target=target_path))
         return
-    if os.path.isfile(target_path):
+    if os.path.isfile(target_path) or os.path.islink(target_path):
         backup_path = get_backup_path(target_path)
         log.W("Backing up {target} to {backup}"
                 .format(target=target_path, backup=backup_path))
