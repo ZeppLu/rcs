@@ -27,6 +27,12 @@ export CFLAGS="$COMFLAGS -std=c11"
 export CXXFLAGS="$COMFLAGS -std=c++14"
 export CC="clang"
 export CXX="clang++"
+function clear_flags() {
+	export CFLAGS=""
+	export CXXFLAGS=""
+	export CC=""
+	export CXX=""
+}
 
 # thefuck
 command -v thefuck >/dev/null 2>&1 && \
@@ -70,3 +76,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # bash completion for stack
 eval "$(stack --bash-completion-script stack)"
 
+# ros
+. /opt/ros/kinetic/setup.bash
+# catkin workspace
+. ~/catkin_ws/devel/setup.bash
