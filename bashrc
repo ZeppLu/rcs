@@ -21,22 +21,26 @@ export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 # PS1='[\u@\h \W]\$ '
 PS1='${arch_chroot:+($arch_chroot)}\[\033[01;33m\]\u\[\033[37m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-# For `make'
+# functions manipulates build flags
 COMFLAGS="-Wall -g -O0"
-export CFLAGS="$COMFLAGS -std=c11"
-export CXXFLAGS="$COMFLAGS -std=c++14"
-export CC="clang"
-export CXX="clang++"
-function clear_flags() {
+function flags_clear() {
 	export CFLAGS=""
 	export CXXFLAGS=""
 	export CC=""
 	export CXX=""
 }
-
-# thefuck
-command -v thefuck >/dev/null 2>&1 && \
-	eval $(thefuck --alias)
+function flags_gcc() {
+	export CFLAGS="$COMFLAGS -std=c11"
+	export CXXFLAGS="$COMFLAGS -std=c++14"
+	export CC="gcc"
+	export CXX="g++"
+}
+function flags_gcc() {
+	export CFLAGS="$COMFLAGS -std=c11"
+	export CXXFLAGS="$COMFLAGS -std=c++14"
+	export CC="clang"
+	export CXX="clang++"
+}
 
 # Some useful alias
 alias ag='ag --follow'
@@ -73,10 +77,18 @@ alias socks='ALL_PROXY=socks5://127.0.0.1:1080/ \
 # stack's suggestion
 export PATH="$HOME/.local/bin:$PATH"
 
+# thefuck
+command -v thefuck >/dev/null 2>&1 && \
+	eval $(thefuck --alias)
+
 # bash completion for stack
 type -P "stack" && eval "$(stack --bash-completion-script stack)"
 
+function source_if_exists() {
+	[[ -f "$1" ]] && source "$1"
+}
+
 # ros
-. /opt/ros/kinetic/setup.bash
+source_if_exists /opt/ros/kinetic/setup.bash
 # catkin workspace
-. ~/catkin_ws/devel/setup.bash
+source_if_exists ~/catkin_ws/devel/setup.bash
