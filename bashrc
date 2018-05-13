@@ -2,6 +2,13 @@
 # ~/.bashrc
 #
 
+function source_if_exists() {
+	[[ -f "$1" ]] && source "$1"
+}
+
+# firstly, source .bashrc provided by vendor
+source_if_exists "$HOME/.bashrc.backup"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -83,10 +90,6 @@ command -v thefuck >/dev/null 2>&1 && \
 
 # bash completion for stack
 type -P "stack" && eval "$(stack --bash-completion-script stack)"
-
-function source_if_exists() {
-	[[ -f "$1" ]] && source "$1"
-}
 
 # ros
 source_if_exists /opt/ros/kinetic/setup.bash
