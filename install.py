@@ -59,4 +59,5 @@ def main():
         install_file(repo_path+k, os.path.expanduser(items[k]))
 
 
-main()
+if __name__ == '__main__':
+    main()
