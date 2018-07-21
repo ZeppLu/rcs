@@ -91,7 +91,7 @@ command -v thefuck >/dev/null 2>&1 && \
 # bash completion for stack
 type -P "stack" && eval "$(stack --bash-completion-script stack)"
 
-# ros
-source_if_exists /opt/ros/kinetic/setup.bash
-# catkin workspace
-source_if_exists ~/catkin_ws/devel/setup.bash
+## ros
+#source_if_exists /opt/ros/kinetic/setup.bash
+## catkin workspace
+#source_if_exists ~/catkin_ws/devel/setup.bash
