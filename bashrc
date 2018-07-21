@@ -60,12 +60,13 @@ alias socks='ALL_PROXY=socks5://127.0.0.1:1080/ \
 	https_proxy=http://127.0.0.1:8118/ \
 	HTTP_PROXY=http://127.0.0.1:8118/ \
 	HTTPS_PROXY=http://127.0.0.1:8118/'
+# conda
+alias activate='source ~/Softwares/miniconda3/bin/activate'
+alias deactivate='source ~/Softwares/miniconda3/bin/deactivate'
 
 # Environment variables
 # socks5 proxy for java-related app
 #export _JAVA_OPTIONS="-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
-
-
 
 ## test
 #if [ -n "$GTK_MODULES" ]; then
@@ -83,13 +84,12 @@ alias socks='ALL_PROXY=socks5://127.0.0.1:1080/ \
 
 # stack's suggestion
 export PATH="$HOME/.local/bin:$PATH"
+# bash completion for stack
+type -P "stack" && eval "$(stack --bash-completion-script stack)"
 
 # thefuck
 command -v thefuck >/dev/null 2>&1 && \
 	eval $(thefuck --alias)
-
-# bash completion for stack
-type -P "stack" && eval "$(stack --bash-completion-script stack)"
 
 ## ros
 #source_if_exists /opt/ros/kinetic/setup.bash
