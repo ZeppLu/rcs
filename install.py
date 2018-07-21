@@ -7,10 +7,11 @@ import filecmp
 repo_path = os.path.dirname(os.path.realpath(__file__)) + "/"
 
 items = {
-        "vimrc"                 : "~/.vimrc",
-        "bashrc"                : "~/.bashrc",
-        "stack/config.yaml"     : "~/.stack/config.yaml",
-        "config/pip/pip.conf"   : "~/.config/pip/pip.conf",
+        "vimrc"                         : "~/.vimrc",
+        "bashrc"                        : "~/.bashrc",
+        "stack/config.yaml"             : "~/.stack/config.yaml",
+        "config/pip/pip.conf"           : "~/.config/pip/pip.conf",
+        "config/fontconfig/fonts.conf"  : "~/.config/fontconfig/fonts.conf",
         }
 
 
