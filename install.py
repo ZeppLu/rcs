@@ -10,6 +10,7 @@ items = {
         "vimrc"                 : "~/.vimrc",
         "bashrc"                : "~/.bashrc",
         "stack/config.yaml"     : "~/.stack/config.yaml",
+        "config/pip/pip.conf"   : "~/.config/pip/pip.conf",
         }
 
 
