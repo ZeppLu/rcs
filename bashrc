@@ -68,20 +68,6 @@ alias deactivate='source ~/Softwares/miniconda3/bin/deactivate'
 # socks5 proxy for java-related app
 #export _JAVA_OPTIONS="-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
 
-## test
-#if [ -n "$GTK_MODULES" ]; then
-#    GTK_MODULES="${GTK_MODULES}:appmenu-gtk-module"
-#else
-#    GTK_MODULES="appmenu-gtk-module"
-#fi
-#
-#if [ -z "$UBUNTU_MENUPROXY" ]; then
-#    UBUNTU_MENUPROXY=1
-#fi
-#
-#export GTK_MODULES
-#export UBUNTU_MENUPROXY
-
 # stack's suggestion
 export PATH="$HOME/.local/bin:$PATH"
 # bash completion for stack
@@ -91,7 +77,6 @@ type -P "stack" && eval "$(stack --bash-completion-script stack)"
 command -v thefuck >/dev/null 2>&1 && \
 	eval $(thefuck --alias)
 
-## ros
-#source_if_exists /opt/ros/kinetic/setup.bash
-## catkin workspace
-#source_if_exists ~/catkin_ws/devel/setup.bash
+# konsole would show ugly horizontal lines on a scaling factor of 1.5
+# this command is used to fix it by re-scale konsole
+#alias konsole='QT_SCALE_FACTOR=0.666666666666 konsole'
