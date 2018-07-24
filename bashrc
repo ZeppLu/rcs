@@ -76,7 +76,3 @@ type -P "stack" && eval "$(stack --bash-completion-script stack)"
 # thefuck
 command -v thefuck >/dev/null 2>&1 && \
 	eval $(thefuck --alias)
-
-# konsole would show ugly horizontal lines on a scaling factor of 1.5
-# this command is used to fix it by re-scale konsole
-#alias konsole='QT_SCALE_FACTOR=0.666666666666 konsole'
