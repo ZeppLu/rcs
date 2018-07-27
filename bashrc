@@ -42,7 +42,7 @@ function flags_gcc() {
 	export CC="gcc"
 	export CXX="g++"
 }
-function flags_gcc() {
+function flags_clang() {
 	export CFLAGS="$COMFLAGS -std=c11"
 	export CXXFLAGS="$COMFLAGS -std=c++14"
 	export CC="clang"
