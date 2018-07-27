@@ -26,7 +26,7 @@ export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
 
 
 # PS1='[\u@\h \W]\$ '
-PS1='${arch_chroot:+($arch_chroot)}\[\033[01;33m\]\u\[\033[37m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${arch_chroot:+($arch_chroot)}\[\033[01;33m\]\u\[\033[01;30m\]@\h\[\033[37m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # functions manipulates build flags
 COMFLAGS="-Wall -g -O0"
