@@ -11,6 +11,9 @@ set wildmenu "zsh like Tab key view
 "execute "set <M-h>=\eh"
 "execute "set <M-l>=\el"
 
+"set fileencodings=utf-8,ucs-bom,gbk,cp936,gb18030,gb2312
+"set encoding=utf-8
+
 " ==> Appearance
 
 set number "line number

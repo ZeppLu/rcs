@@ -7,9 +7,11 @@ import filecmp
 repo_path = os.path.dirname(os.path.realpath(__file__)) + "/"
 
 items = {
-        "vimrc"                 : "~/.vimrc",
-        "bashrc"                : "~/.bashrc",
-        "stack/config.yaml"     : "~/.stack/config.yaml",
+        "vimrc"                         : "~/.vimrc",
+        "bashrc"                        : "~/.bashrc",
+        "stack/config.yaml"             : "~/.stack/config.yaml",
+        "config/pip/pip.conf"           : "~/.config/pip/pip.conf",
+        "config/fontconfig/fonts.conf"  : "~/.config/fontconfig/fonts.conf",
         }
 
 
@@ -24,10 +26,7 @@ def get_backup_path(orig_path):
 def install_file(file_path, target_path):
     log.I("Installing {source} to {target}"
             .format(source=file_path, target=target_path))
-    if not os.path.isdir(os.path.dirname(target_path)):
-        log.W("Creating parent directory for {target}"
-                .format(target=target_path))
-        os.mkdir(os.path.dirname(target_path))
+    os.makedirs(os.path.dirname(target_path), exist_ok=True)
     if os.path.islink(target_path) and os.readlink(target_path)==file_path:
         log.W("Ignoring already-created symbolic link {target}"
                 .format(target=target_path))
@@ -58,4 +57,5 @@ def main():
         install_file(repo_path+k, os.path.expanduser(items[k]))
 
 
-main()
+if __name__ == '__main__':
+    main()
