@@ -1,14 +1,26 @@
 # Git related staff
-#Import-Module posh-git
+Import-Module posh-git -ErrorAction SilentlyContinue
+
+# powerline
+#Import-Module oh-my-posh -ErrorAction SilentlyContinue
+
+# vcpkg
+Import-Module 'C:\Dev\vcpkg\scripts\posh-vcpkg' -ErrorAction SilentlyContinue
 
 # Aliases
-$vimPath = "C:\Program Files (x86)\Vim\vim80\vim.exe"
-$pythonPath = "C:\Program Files\Python36\python.exe"
-if (Test-Path "$vimPath") { Set-Alias vim "$vimPath" }
-if (Test-Path "$pythonPath") { Set-Alias python "$pythonPath" }
+$vimPath = "C:\Program Files\Git\usr\bin\vim.exe"
+$pythonPath = "C:\Programs\Miniconda3\python.exe"
+$juliaPath = "C:\Users\Zepp Lu\AppData\Local\Julia-1.0.0\bin\julia.exe"
+$condaActivatePath = "C:\programs\Miniconda3\Scripts\activate.ps1"
+if (Test-Path "$vimPath") { Set-Alias vim.exe "$vimPath" }
+if (Test-Path "$pythonPath") { Set-Alias python.exe "$pythonPath" }
+if (Test-Path "$juliaPath") { Set-Alias julia.exe "$juliaPath" }
+if (Test-Path "$condaActivatePath") { Set-Alias activate "$condaActivatePath" }
 
 # I don't like wget to work like curl, remove it from global scope
 if (Test-Path alias:wget) { Remove-Item -Path Alias:\wget }
+# newer version of Windows has provided curl.exe, so removing this alias
+if (Test-Path alias:curl) { Remove-Item -Path Alias:\curl}
 
 # Helper function to check administrative permission
 Function isAdmin

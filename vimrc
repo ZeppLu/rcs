@@ -49,6 +49,9 @@ nnoremap <C-l> gt
 "nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
+" auto reload
+set autoread
+
 " ==> Search
 
 set ignorecase "Case insensitive search
