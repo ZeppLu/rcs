@@ -76,3 +76,7 @@ type -P "stack" && eval "$(stack --bash-completion-script stack)"
 # thefuck
 command -v thefuck >/dev/null 2>&1 && \
 	eval $(thefuck --alias)
+
+# ROS
+ROS_SETUP="/opt/ros/melodic/setup.bash"
+[ -f "$ROS_SETUP" ] && source "$ROS_SETUP"
