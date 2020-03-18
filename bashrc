@@ -78,5 +78,11 @@ command -v thefuck >/dev/null 2>&1 && \
 	eval $(thefuck --alias)
 
 # ROS
-ROS_SETUP="/opt/ros/melodic/setup.bash"
-[ -f "$ROS_SETUP" ] && source "$ROS_SETUP"
+if [ -f "$HOME/catkin_ws/devel/setup.bash" ]; then
+	source "/opt/ros/melodic/setup.bash"
+	source "$HOME/catkin_ws/devel/setup.bash"
+	# for ROS too, copied from hawkbot's
+	export ROS_PARALLEL_JOBS=-j1
+	export ROS_MASTER_URI=http://10.42.0.1:11311
+	export ROS_HOSTNAME=10.42.0.73
+fi
