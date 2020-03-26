@@ -84,5 +84,5 @@ if [ -f "$HOME/catkin_ws/devel/setup.bash" ]; then
 	# for ROS too, copied from hawkbot's
 	export ROS_PARALLEL_JOBS=-j1
 	export ROS_MASTER_URI=http://10.42.0.1:11311
-	export ROS_HOSTNAME=10.42.0.73
+	export ROS_IP=10.42.0.73
 fi
