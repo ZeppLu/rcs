@@ -83,6 +83,12 @@ if [ -f "$HOME/catkin_ws/devel/setup.bash" ]; then
 	source "$HOME/catkin_ws/devel/setup.bash"
 	# for ROS too, copied from hawkbot's
 	export ROS_PARALLEL_JOBS=-j1
-	export ROS_MASTER_URI=http://10.42.0.1:11311
-	export ROS_IP=10.42.0.73
+	export ROS_MASTER_URI=http://192.168.3.100:11311
+fi
+
+# Gazebo
+if [ -f "/usr/share/gazebo/setup.sh" ]; then
+	source "/usr/share/gazebo/setup.sh"
+	export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org
+	export GAZEBO_MODEL_PATH="$HOME/Documents/gazebo-9/models"
 fi

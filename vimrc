@@ -55,6 +55,12 @@ nnoremap <C-l> gt
 " auto reload
 set autoread
 
+" odd extensions
+autocmd BufNewFile,BufRead *.launch set filetype=xml
+autocmd BufNewFile,BufRead *.urdf set filetype=xml
+autocmd BufNewFile,BufRead *.urdf.xacro set filetype=xml
+autocmd BufNewFile,BufRead *.world set filetype=xml
+
 " ==> Search
 
 set ignorecase "Case insensitive search
