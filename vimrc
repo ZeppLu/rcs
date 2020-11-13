@@ -48,6 +48,8 @@ set scrolloff=7
 " n: normal mode; noremap: maps, but not recursively
 nnoremap <C-h> gT
 nnoremap <C-l> gt
+inoremap <C-h> <esc>gT
+inoremap <C-l> <esc>gt
 " <CR>: carriage return, means an enter hit
 "nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
