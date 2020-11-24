@@ -60,9 +60,6 @@ alias socks='ALL_PROXY=socks5://127.0.0.1:1080/ \
 	https_proxy=http://127.0.0.1:8118/ \
 	HTTP_PROXY=http://127.0.0.1:8118/ \
 	HTTPS_PROXY=http://127.0.0.1:8118/'
-# conda
-alias activate='source ~/Softwares/miniconda3/bin/activate'
-alias deactivate='source ~/Softwares/miniconda3/bin/deactivate'
 
 # Environment variables
 # socks5 proxy for java-related app
@@ -81,9 +78,10 @@ command -v thefuck >/dev/null 2>&1 && \
 if [ -f "$HOME/catkin_ws/devel/setup.bash" ]; then
 	source "/opt/ros/melodic/setup.bash"
 	source "$HOME/catkin_ws/devel/setup.bash"
-	# for ROS too, copied from hawkbot's
-	export ROS_PARALLEL_JOBS=-j1
-	export ROS_MASTER_URI=http://192.168.3.100:11311
+	# see https://wiki.ros.org/ROS/EnvironmentVariables#ROS_PARALLEL_JOBS
+	export ROS_PARALLEL_JOBS="-j4 -l4"
+	# actual uri set in .bachrc_not_synced
+	export ROS_MASTER_URI=http://255.255.255.255:11311
 fi
 
 # Gazebo
@@ -93,30 +91,7 @@ if [ -f "/usr/share/gazebo/setup.sh" ]; then
 	export GAZEBO_MODEL_PATH="$HOME/Documents/gazebo-9/models"
 fi
 
-######################
-# used on HuanbaoYuan
-function huanbaoyuan_setup() {
-	# >>> conda initialize >>>
-	# !! Contents within this block are managed by 'conda init' !!
-	__conda_setup="$("$HOME/anaconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
-	if [ $? -eq 0 ]; then
-		eval "$__conda_setup"
-	else
-		if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-			. "$HOME/anaconda3/etc/profile.d/conda.sh"
-		else
-			export PATH="$HOME/anaconda3/bin:$PATH"
-		fi
-	fi
-	unset __conda_setup
-	# <<< conda initialize <<<
-
-	# --- cuda9.2.148 + cudnn7.6.3
-	export PATH="$HOME/cuda-9.2/bin:$PATH"
-	export LD_LIBRARY_PATH="$HOME/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}:$HOME/cudnn-7.6.3/lib64"
-	export CUDA_HOME="$HOME/cuda-9.2"
-}
-
-if [ -f "$HOME/.HUANBAOYUAN" ]; then
-	huanbaoyuan_setup
+# include platform specific bashrcs
+if [ -f $HOME/.bashrc_not_synced ]; then
+	. $HOME/.bashrc_not_synced
 fi
