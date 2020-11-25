@@ -80,8 +80,9 @@ if [ -f "$HOME/catkin_ws/devel/setup.bash" ]; then
 	source "$HOME/catkin_ws/devel/setup.bash"
 	# see https://wiki.ros.org/ROS/EnvironmentVariables#ROS_PARALLEL_JOBS
 	export ROS_PARALLEL_JOBS="-j4 -l4"
-	# actual uri set in .bachrc_not_synced
+	# actual uri & ip set in .bachrc_not_synced
 	export ROS_MASTER_URI=http://255.255.255.255:11311
+	export ROS_IP=255.255.255.255
 fi
 
 # Gazebo
